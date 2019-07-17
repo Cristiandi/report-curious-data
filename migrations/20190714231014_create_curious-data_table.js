@@ -1,5 +1,4 @@
-
-exports.up = function(knex) {
+const up = knex => {
   return knex.schema.createTable('curious-data', table => {
     table.increments('id');
     table.text('data', 'mediumtext');
@@ -10,6 +9,11 @@ exports.up = function(knex) {
   });
 };
 
-exports.down = function(knex) {
+const down = knex => {
   return knex.schema.dropTable('curious-data');
+};
+
+module.exports = {
+  up,
+  down
 };

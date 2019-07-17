@@ -1,5 +1,5 @@
 
-exports.seed = async (knex) => {
+const seed = async (knex) => {
   const tags = [
     {
       id: 1,
@@ -18,12 +18,15 @@ exports.seed = async (knex) => {
   const promises = tags.map(async tag => {
     const rows = await knex('tags').select('id').where('name', tag.name);
     if (rows.length === 0) {
-      const id = (await knex('tags').insert(tag))[0];      
+      const id = (await knex('tags').insert(tag))[0];
       return { id };
     }
     return { ...rows[0] };
   });
 
-  const rows = await Promise.all(promises);
-  console.log(rows);
+  await Promise.all(promises);
+};
+
+module.exports = {
+  seed
 };

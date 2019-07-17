@@ -1,5 +1,5 @@
 
-exports.up = function(knex) {
+const up = knex => {
   return knex.schema.createTable('curious-data_tags', table => {
     table.increments('id');
     table.integer('curious-data_id').unsigned();
@@ -11,6 +11,11 @@ exports.up = function(knex) {
   });
 };
 
-exports.down = function(knex) {
+const down = knex => {
   return knex.schema.dropTable('curious-data_tags');
+};
+
+module.exports = {
+  up,
+  down
 };
