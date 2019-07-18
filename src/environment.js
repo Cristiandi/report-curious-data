@@ -19,6 +19,7 @@ dotenv.config({ path: envPath });
 
 const enviroment = {
   TIME_ZONE: process.env.TIME_ZONE,
+  APP_PORT: process.env.APP_PORT || 8080,
   DB_CLIENT: process.env.DB_CLIENT,
   DB_USER: process.env.DB_USER,
   DB_PASSWORD: process.env.DB_PASSWORD,
