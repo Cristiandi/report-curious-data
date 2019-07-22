@@ -3,15 +3,15 @@ const seed = async (knex) => {
   const tags = [
     {
       id: 1,
-      name: 'Ciencia'
+      name: 'ciencia'
     },
     {
       id: 2,
-      name: 'Tecnología'
+      name: 'tecnología'
     },
     {
       id: 3,
-      name: 'Cosmología'
+      name: 'cosmología'
     }
   ];
 
